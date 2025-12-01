@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-react": "^11.0.0",
+    "ckeditor5": "^47.2.0",
+    "ckeditor5-premium-features": "^47.2.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
