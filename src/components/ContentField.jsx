@@ -85,6 +85,8 @@ import {
 import 'ckeditor5/ckeditor5.css';
 import 'ckeditor5-premium-features/ckeditor5-premium-features.css';
 
+// import { useSidebar } from '../contexts/useSidebar';
+
 // ✏️ removed: import './App.css'; - using only default styles
 
 // ✏️ LOAD FROM ENVIRONMENT FILE
@@ -98,6 +100,7 @@ export default function ContentField({
   onChange,
 }) {
 
+  // const { sidebarElement } = useSidebar();
   const editorContainerRef = useRef(null);
   const editorMenuBarRef = useRef(null);
   const editorToolbarRef = useRef(null);
@@ -248,10 +251,16 @@ export default function ContentField({
           container: {
             type: 'overlay',
             side: 'right'
+            // type: 'sidebar',
+            // element: sidebarElement,
+            // side: 'right'
+
           },
           chat: {
             models: {
-
+              // defaultModelId: 'auto',
+              // modelSelectorAlwaysVisible: true,
+              // displayedModels: ['claude-4-5-sonnet', 'auto', 'claude-4-5-haiku', 'gpt-mini']
             },
             context: {
               document: {
@@ -263,9 +272,64 @@ export default function ContentField({
               files: {
                 enabled: true
               },
-
+              // sources: [
+              //   {
+              //     id: "guidelines",
+              //     label: "Internal Guidelines",
+              //     // sample resources
+              //     getResources: async () => {
+              //       const resources = [
+              //         {
+              //           id: 'email-styleguide',
+              //           type: 'web-resource',
+              //           label: 'Email Guidelines',
+              //           data: 'https://gist.github.com/Simply007/0fb703584c932825e6ff691b9913d97e'
+              //         },
+              //         {
+              //           id: 'content-guidelines',
+              //           type: 'web-resource',
+              //           label: 'Content Creation Guidelines',
+              //           data: 'https://gist.github.com/Simply007/f254ef5eccd47169bcc6f5eefaa37620'
+              //         }
+              //       ];
+              //       return Promise.resolve(resources);
+              //     }
+              //   },
+              //   // More source groups can be added here
+              // ],
             }
-          }
+          },
+          quickActions: {
+            // extraCommands: [
+            //   // An action that opens the AI Chat interface for interactive conversations.
+            //   {
+            //     id: 'expert-analysis-chat',
+            //     displayedPrompt: 'Ask expert AI about this',
+            //     prompt: 'You are an AI expert specialized in clear, practical explanations for non-technical users. Analyze the selected text, explain what it means in simple terms, point out any issues or unclear parts, and suggest specific improvements.',
+            //     type: 'CHAT'
+            //   },
+            //   {
+            //     id: 'enhance-by-links',
+            //     displayedPrompt: 'Enhance by links',
+            //     prompt: 'Analyze the selected text and suggest relevant links to important concepts, terms, or references found within it. Ensure the number of links is balanced and does not overwhelm the text—only link the most significant parts. Do not modify the original text, just provide the suggested links.',
+            //     type: 'ACTION',
+            //     model: 'claude-4-5-sonnet'
+            //   },
+            //   // ... More custom actions ...
+            // ],
+          },
+          reviewMode: {
+            // translations: [
+            //   {
+            //     id: 'polish',
+            //     label: 'Polish'
+            //   },
+            //   {
+            //     id: 'czech',
+            //     label: 'Czech'
+            //   }
+            // ]
+          },
         },
         // ⭐ BALLOON TOOLBAR FOR AI
         balloonToolbar: ['aiQuickActions', '|', 'bold', 'italic', '|', 'link', 'insertImage', '|', 'bulletedList', 'numberedList'],
