@@ -85,6 +85,7 @@ import {
 import 'ckeditor5/ckeditor5.css';
 import 'ckeditor5-premium-features/ckeditor5-premium-features.css';
 
+// 📌 Task 1: Integrate AI Sidebar to the Editor - uncomment import
 // import { useSidebar } from '../contexts/useSidebar';
 
 // ✏️ removed: import './App.css'; - using only default styles
@@ -100,6 +101,7 @@ export default function ContentField({
   onChange,
 }) {
 
+  // 📌 Task 1: Integrate AI Sidebar to the Editor - load the reference to the Sidebar container ref
   // const { sidebarElement } = useSidebar();
   const editorContainerRef = useRef(null);
   const editorMenuBarRef = useRef(null);
@@ -126,6 +128,7 @@ export default function ContentField({
             'redo',
             '|',
             // ⭐ TOOLBAR BUTTONS CONFIGURATION
+            // 📌 Task 1: Integrate AI Sidebar to the Editor - comment toggleAI button in the app
             'toggleAi',
             'aiQuickActions',
             '|',
@@ -249,6 +252,8 @@ export default function ContentField({
         // ⭐ AI CONFIG
         ai: {
           container: {
+            // 📌 Task 1: Integrate AI Sidebar to the Editor:
+            // comment type and side and uncomment the rest of the block
             type: 'overlay',
             side: 'right'
             // type: 'sidebar',
@@ -258,6 +263,7 @@ export default function ContentField({
           },
           chat: {
             models: {
+              // 📌 Task 2: Custom model selection - uncomment the block
               // defaultModelId: 'auto',
               // modelSelectorAlwaysVisible: true,
               // displayedModels: ['claude-4-5-sonnet', 'auto', 'claude-4-5-haiku', 'gpt-mini']
@@ -272,6 +278,7 @@ export default function ContentField({
               files: {
                 enabled: true
               },
+              // 📌 Task 3: Custom context sources - uncomment the block
               // sources: [
               //   {
               //     id: "guidelines",
@@ -300,6 +307,7 @@ export default function ContentField({
             }
           },
           quickActions: {
+            // 📌 Task 4: Custom quick actions - uncomment the block
             // extraCommands: [
             //   // An action that opens the AI Chat interface for interactive conversations.
             //   {
@@ -319,6 +327,7 @@ export default function ContentField({
             // ],
           },
           reviewMode: {
+            // 📌 Task 5: Custom translation in review mode - uncomment the block
             // translations: [
             //   {
             //     id: 'polish',
@@ -337,7 +346,7 @@ export default function ContentField({
           tokenUrl: CLOUD_SERVICES_TOKEN_URL
         },
         collaboration: {
-          // ✏️ TOOLBAR BUTTONS CONFIGURATION
+          // ✏️ Identification of the document
           channelId: contentKey
         },
         fontFamily: {

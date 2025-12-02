@@ -1,7 +1,6 @@
 {
-  "name": "ckeditor-ai-webinar-showcase",
-  "private": true,
-  "version": "0.0.0",
+  "name": "devrel-ckeditor-ai-showcase-react",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",

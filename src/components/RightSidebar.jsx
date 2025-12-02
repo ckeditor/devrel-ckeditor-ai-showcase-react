@@ -84,6 +84,7 @@ const RightSidebar = () => {
         <div className="sidebar-section-content" style={{ display: expandedSections['ai-chat'] ? 'flex' : 'none', padding: 0 }}>
           <div ref={registerSidebarElement} id="ai-sidebar-container" style={{ width: '100%', height: '100%' }}>
             {/* CKEditor AI interface will be rendered here */}
+            {/* // 📌 Task 1: Integrate AI Sidebar to the Editor - remove the placeholder span below*/}
             <span style={{ margin: '10px', padding: '10px', border: '1px dashed #ccc', fontSize: '13px', color: '#888' }}>CKEditor AI Chat interface placeholder</span>
           </div>
         </div>
