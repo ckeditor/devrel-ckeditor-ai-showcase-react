@@ -485,7 +485,7 @@ export default function ContentField({
                     Array.from(editorMenuBarRef.current.children).forEach(child => child.remove());
                   }}
                   // ✏️ ADDED IDENTIFICATION FOR PROPER RELOADING
-                  id={contentKey}
+                  key={contentKey}
                   editor={DecoupledEditor}
                   config={editorConfig}
                   // ✏️ ADDED INITIAL DATA FROM PROP
